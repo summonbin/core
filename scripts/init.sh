@@ -3,6 +3,7 @@ BASE_URL="https://raw.githubusercontent.com/summonbin"
 INSTALL_PATH="summon"
 SCHEME_ROOT="executable"
 DEFAULT_SCHEME="$SCHEME_ROOT/debug"
+DEFAULT_CACHE_PATH="\$HOME/.summon"
 
 mkdir -p "$INSTALL_PATH"
 mkdir -p "$DEFAULT_SCHEME"
@@ -48,7 +49,7 @@ fi
 #### Install core drivers ####
 ##############################
 
-curl -L "$BASE_URL/binary/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME"
-curl -L "$BASE_URL/swift/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME"
-curl -L "$BASE_URL/ruby/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME"
-curl -L "$BASE_URL/node/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME"
+curl -L "$BASE_URL/binary/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
+curl -L "$BASE_URL/swift/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
+curl -L "$BASE_URL/ruby/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
+curl -L "$BASE_URL/node/0.1.0/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
