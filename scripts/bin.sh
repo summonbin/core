@@ -21,7 +21,7 @@ then
   unset BIN_ARGS[1]
   BIN_ARGS=${BIN_ARGS[@]}
 else
-  SCHEME=$CONFIG_DIR/default
+  SCHEME="$CONFIG_DIR/debug"
   BIN_NAME_TO_EXECUTE=$1
   BIN_ARGS=($@)
   unset BIN_ARGS[0]

@@ -2,7 +2,7 @@
 BASE_URL="https://raw.githubusercontent.com/summonbin"
 INSTALL_PATH="summon"
 SCHEME_ROOT="executable"
-DEFAULT_SCHEME="$SCHEME_ROOT/default"
+DEFAULT_SCHEME="$SCHEME_ROOT/debug"
 
 mkdir -p "$INSTALL_PATH"
 mkdir -p "$DEFAULT_SCHEME"
