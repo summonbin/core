@@ -11,19 +11,23 @@ CONFIG_DIR=executable
 #########################
 
 BASE_DIR=$(dirname "$0")
+BIN_ARGS=()
+
+for i
+do
+  BIN_ARGS+=(\"${i}\")
+done
 
 if [ -d "$CONFIG_DIR/$1" ]
 then
   SCHEME="$CONFIG_DIR/$1"
   BIN_NAME_TO_EXECUTE=$2
-  BIN_ARGS=($@)
   unset BIN_ARGS[0]
   unset BIN_ARGS[1]
   BIN_ARGS=${BIN_ARGS[@]}
 else
   SCHEME="$CONFIG_DIR/debug"
   BIN_NAME_TO_EXECUTE=$1
-  BIN_ARGS=($@)
   unset BIN_ARGS[0]
   BIN_ARGS=${BIN_ARGS[@]}
 fi
