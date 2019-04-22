@@ -11,19 +11,23 @@ CONFIG_DIR=executable
 #########################
 
 BASE_DIR=$(dirname "$0")
+BIN_ARGS=()
+
+for i
+do
+  BIN_ARGS+=(\"${i}\")
+done
 
 if [ -d "$CONFIG_DIR/$1" ]
 then
   SCHEME="$CONFIG_DIR/$1"
   BIN_NAME_TO_EXECUTE=$2
-  BIN_ARGS=($@)
   unset BIN_ARGS[0]
   unset BIN_ARGS[1]
   BIN_ARGS=${BIN_ARGS[@]}
 else
   SCHEME="$CONFIG_DIR/debug"
   BIN_NAME_TO_EXECUTE=$1
-  BIN_ARGS=($@)
   unset BIN_ARGS[0]
   BIN_ARGS=${BIN_ARGS[@]}
 fi
@@ -53,10 +57,10 @@ do
   if [ -d "$BASE_DIR/$BIN_NAME_TO_EXECUTE" ]
   then
     DRIVER="$BIN_NAME_TO_EXECUTE"
-    sh "$BASE_DIR/$DRIVER/$DRIVER.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[1]} $BIN_ARGS
+    eval sh "$BASE_DIR/$DRIVER/$DRIVER.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[1]} $BIN_ARGS
   else
     DRIVER=${BIN_CONFIGS[1]}
     unset BIN_CONFIGS[1]
-    sh "$BASE_DIR/$DRIVER/run.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[@]} $BIN_ARGS
+    eval sh "$BASE_DIR/$DRIVER/run.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[@]} $BIN_ARGS
   fi
 done < $SCHEME/bin
