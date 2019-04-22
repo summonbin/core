@@ -57,10 +57,10 @@ do
   if [ -d "$BASE_DIR/$BIN_NAME_TO_EXECUTE" ]
   then
     DRIVER="$BIN_NAME_TO_EXECUTE"
-    sh "$BASE_DIR/$DRIVER/$DRIVER.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[1]} $BIN_ARGS
+    eval sh "$BASE_DIR/$DRIVER/$DRIVER.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[1]} $BIN_ARGS
   else
     DRIVER=${BIN_CONFIGS[1]}
     unset BIN_CONFIGS[1]
-    sh "$BASE_DIR/$DRIVER/run.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[@]} $BIN_ARGS
+    eval sh "$BASE_DIR/$DRIVER/run.sh" "$SCHEME/$DRIVER" ${BIN_CONFIGS[@]} $BIN_ARGS
   fi
 done < $SCHEME/bin
