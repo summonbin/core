@@ -15,6 +15,7 @@ mkdir -p "$DEFAULT_SCHEME"
 
 if [ ! -f "$SCHEME_ROOT/init" ]
 then
+  echo "#!/bin/sh" >> "$SCHEME_ROOT/init"
   echo "curl -L $BASE_URL/core/0.1.4/scripts/init.sh | sh" >> "$SCHEME_ROOT/init"
   chmod +x "$SCHEME_ROOT/init"
 fi
