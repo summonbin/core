@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 BASE_URL="https://raw.githubusercontent.com/summonbin"
 INSTALL_PATH="summon"
 SCHEME_ROOT="executable"
