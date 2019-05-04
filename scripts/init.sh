@@ -16,7 +16,7 @@ mkdir -p "$DEFAULT_SCHEME"
 if [ ! -f "$SCHEME_ROOT/init" ]
 then
   echo "#!/bin/sh" >> "$SCHEME_ROOT/init"
-  echo "curl -L $BASE_URL/core/0.1.5/scripts/init.sh | sh" >> "$SCHEME_ROOT/init"
+  echo "curl -L $BASE_URL/core/0.1.6/scripts/init.sh | sh" >> "$SCHEME_ROOT/init"
   chmod +x "$SCHEME_ROOT/init"
 fi
 
@@ -32,7 +32,7 @@ touch "$DEFAULT_SCHEME/bin"
 #### Build summon/bin ####
 ##########################
 
-curl -L "$BASE_URL/core/0.1.5/scripts/bin.sh" -o "$INSTALL_PATH/bin"
+curl -L "$BASE_URL/core/0.1.6/scripts/bin.sh" -o "$INSTALL_PATH/bin"
 chmod +x "$INSTALL_PATH/bin"
 
 
