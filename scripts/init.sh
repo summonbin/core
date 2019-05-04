@@ -52,5 +52,5 @@ fi
 
 curl -L "$BASE_URL/binary/0.1.2/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
 curl -L "$BASE_URL/swift/0.1.3/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
-curl -L "$BASE_URL/ruby/0.1.3/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
+curl -L "$BASE_URL/ruby/0.1.4/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
 curl -L "$BASE_URL/node/0.1.3/scripts/init.sh" | sh -s "$INSTALL_PATH" "$DEFAULT_SCHEME" "$DEFAULT_CACHE_PATH"
